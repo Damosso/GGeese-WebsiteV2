@@ -143,34 +143,46 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Technology Section */}
+      {/* For Venues Section */}
       <section className="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
-                Built for Venues, Designed for Fun
+                The Next Big Thing in Entertainment
               </h2>
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                ArcadiaX combines Meta Quest 3 headsets with custom drift karts, operator management tools, and spectator engagement features to create the ultimate social gaming experience.
+                Location-based mixed reality entertainment is revolutionizing how venues attract and engage customers. Our platform combines cutting-edge technology with proven business models to deliver exceptional ROI.
               </p>
               <ul className="space-y-4 mb-10">
-                {siteData.technology.map((item, index) => (
+                {[
+                  'Turnkey mixed reality gaming solutions',
+                  'Multiple revenue streams from a single platform',
+                  'Ongoing content updates and support',
+                  'Perfect for entertainment venues, malls, and activity centers'
+                ].map((item, index) => (
                   <li key={index} className="flex items-start gap-4">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0" />
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
-                      <p className="text-slate-300">{item.description}</p>
+                      <p className="text-lg text-slate-200">{item}</p>
                     </div>
                   </li>
                 ))}
               </ul>
-              <Link to="/experience">
-                <Button size="lg" className="px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
-                  See How It Works
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/locations">
+                  <Button size="lg" className="px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+                    Venue Partnership Info
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/experience">
+                  <Button size="lg" variant="outline" className="px-8 py-6 bg-slate-800 border-slate-700 text-white hover:bg-slate-700 hover:scale-105 transition-all duration-300">
+                    Explore ArcadiaX
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
             
             <div className="relative">
