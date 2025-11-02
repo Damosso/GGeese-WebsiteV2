@@ -46,9 +46,16 @@ export const Experience = () => {
         <div className="absolute inset-0 experience-gradient" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Transform Reality</h1>
+          <div className="mb-8">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png" 
+              alt="ArcadiaX" 
+              className="h-40 md:h-48 mx-auto drop-shadow-2xl"
+            />
+          </div>
+          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Mixed Reality Drift Karting</h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto">
-            See how we turn ordinary spaces into extraordinary mixed reality gaming arenas.
+            The ultimate party game platform transforming venues into immersive social gaming destinations.
           </p>
         </div>
       </section>
