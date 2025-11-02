@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
-import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Linkedin, Instagram, MessageSquare } from 'lucide-react';
+import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Linkedin, Instagram, MessageSquare, Calendar } from 'lucide-react';
 import { siteData } from '../mock';
+import BookDemoSection from '../components/BookDemoSection';
 
 const iconMap = {
   Layers,
