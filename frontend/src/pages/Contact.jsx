@@ -21,7 +21,7 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    try:
+    try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL;
       const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
