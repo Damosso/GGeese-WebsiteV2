@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
@@ -7,6 +8,7 @@ import { Home } from "./pages/Home";
 import { Experience } from "./pages/Experience";
 import { Gallery } from "./pages/Gallery";
 import { Contact } from "./pages/Contact";
+import { Locations } from "./pages/Locations";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/locations" element={<Locations />} />
           </Routes>
         </main>
         <Footer />
