@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Zap, Paintbrush, Ghost, Target, Trophy, Plus } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
+import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Zap, Paintbrush, Ghost, Target, Trophy, Plus, Building2, Briefcase, PartyPopper, Gamepad2 } from 'lucide-react';
 import { siteData } from '../mock';
 
 const iconMap = {
@@ -20,6 +21,13 @@ const gameIconMap = {
   Target,
   Trophy,
   Plus
+};
+
+const useCaseIcons = {
+  'Entertainment Venues': Building2,
+  'Corporate Events': Briefcase,
+  'Private Parties': PartyPopper,
+  'Gaming Centers': Gamepad2
 };
 
 export const Home = () => {
