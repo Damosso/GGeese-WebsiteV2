@@ -276,69 +276,18 @@ export const ArcadiaX = () => {
         </div>
       </section>
 
-      {/* Transformation Demo */}
+      {/* Interactive 3D Transformation Demo */}
       <section className="py-24 bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-6 text-white">Space Transformation</h2>
+            <h2 className="text-5xl font-bold mb-6 text-white">Interactive Space Transformation</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Watch how ArcadiaX transforms an ordinary warehouse into an immersive gaming environment with mixed reality overlays.
+              Experience how ArcadiaX transforms any empty venue into an immersive mixed reality gaming arena. Rotate, explore, and watch the magic happen.
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl bg-slate-800">
-              {!isTransformed ? (
-                <div className="w-full h-full flex items-center justify-center p-12">
-                  <div className="text-center">
-                    <Box className="w-24 h-24 text-slate-600 mx-auto mb-6" />
-                    <p className="text-3xl font-semibold text-slate-400 mb-2">Empty Warehouse</p>
-                    <p className="text-slate-500 mb-8">400m² concrete space with basic markings</p>
-                  </div>
-                </div>
-              ) : (
-                <div className="w-full h-full relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-cyan-500">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
-                  </div>
-                  
-                  <div className="absolute inset-0 flex items-center justify-center p-12">
-                    <div className="text-center">
-                      <Wand2 className="w-24 h-24 text-white mx-auto mb-6 drop-shadow-2xl" />
-                      <p className="text-4xl font-bold text-white drop-shadow-lg mb-2">
-                        Mixed Reality Gaming Arena
-                      </p>
-                      <p className="text-white/95 text-lg drop-shadow-md mb-8">
-                        Virtual game elements, interactive obstacles, and immersive environments
-                      </p>
-                      <div className="flex gap-3 justify-center flex-wrap">
-                        <span className="px-4 py-2 bg-purple-500/80 backdrop-blur-sm rounded-full text-white text-sm font-semibold">
-                          Paint Battle Active
-                        </span>
-                        <span className="px-4 py-2 bg-pink-500/80 backdrop-blur-sm rounded-full text-white text-sm font-semibold">
-                          Ghost Hunt Ready
-                        </span>
-                        <span className="px-4 py-2 bg-cyan-500/80 backdrop-blur-sm rounded-full text-white text-sm font-semibold">
-                          Drift Mode On
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            <div className="text-center mt-8">
-              <Button
-                size="lg"
-                onClick={() => setIsTransformed(!isTransformed)}
-                className="px-12 py-6 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white hover:scale-105 transition-all duration-300 shadow-lg"
-              >
-                {isTransformed ? 'Reset View' : 'Transform Space'}
-                <Wand2 className="ml-3 w-5 h-5" />
-              </Button>
-              <p className="text-slate-400 mt-4">Click to see the MR transformation</p>
-            </div>
+          <div className="max-w-6xl mx-auto">
+            <SpaceTransformation3D />
           </div>
         </div>
       </section>
