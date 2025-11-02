@@ -40,78 +40,59 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Exciting Animated */}
+      {/* Hero Section - Redesigned */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 hero-gradient" />
         
-        {/* Animated grid background */}
-        <div className="absolute inset-0 opacity-20">
+        {/* Diagonal stripes pattern */}
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.1) 2px, transparent 2px)',
-            backgroundSize: '50px 50px',
-            animation: 'grid-move 20s linear infinite'
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px)'
           }} />
         </div>
         
-        {/* Animated particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `particle-float ${5 + Math.random() * 10}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 5}s`,
-                opacity: Math.random() * 0.5 + 0.2
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Glowing orbs */}
+        {/* Large floating orbs */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
         </div>
         
-        <div className={`relative z-10 container mx-auto px-6 text-center transition-all duration-1000 transform ${
+        <div className={`relative z-10 container mx-auto px-6 text-center transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           
-          {/* Logo with glow effect */}
-          <div className="mb-12 relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 bg-white/20 rounded-full blur-3xl animate-pulse-slow" />
-            </div>
+          {/* Large bold logo */}
+          <div className="mb-16 relative">
             <img 
               src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png" 
-              alt="ArcadiaX Logo" 
-              className="h-56 md:h-72 mx-auto mb-8 drop-shadow-2xl relative z-10 animate-float-slow"
+              alt="ArcadiaX" 
+              className="h-64 md:h-80 mx-auto drop-shadow-2xl"
             />
           </div>
           
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 text-white leading-tight">
-            {siteData.heroTitle}
+          <h1 className="text-6xl md:text-9xl font-black mb-10 text-white leading-none tracking-tight">
+            The Future of<br />
+            <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              Social Gaming
+            </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-4xl mx-auto font-light">
-            {siteData.heroSubtitle}
+          <p className="text-2xl md:text-3xl mb-14 text-white/95 max-w-4xl mx-auto font-medium leading-relaxed">
+            Transform any space into an epic mixed reality arena where friends race, compete, and play together in immersive party games.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/contact">
-              <Button size="lg" className="px-12 py-7 text-lg font-semibold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+            <Link to="/locations">
+              <Button size="lg" className="px-14 py-8 text-xl font-bold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
+                Partner With Us
+                <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
             </Link>
             
             <Link to="/gallery">
-              <Button size="lg" variant="outline" className="px-12 py-7 text-lg font-semibold bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                <Play className="mr-2 w-5 h-5" />
-                Watch Demo
+              <Button size="lg" variant="outline" className="px-14 py-8 text-xl font-bold bg-white/10 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
+                <Play className="mr-3 w-6 h-6" />
+                See It In Action
               </Button>
             </Link>
           </div>
