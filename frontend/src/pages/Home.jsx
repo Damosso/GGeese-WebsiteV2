@@ -194,6 +194,43 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Join the Community Section */}
+      <section className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-400 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">Join the Community</h2>
+            <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed">
+              Be part of the mixed reality revolution. Connect with venue operators, game developers, and XR enthusiasts shaping the future of entertainment.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a 
+                href={siteData.contactInfo.socialMedia.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="px-10 py-7 text-lg font-semibold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
+                  Follow on LinkedIn
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </a>
+              
+              <Link to="/locations">
+                <Button size="lg" variant="outline" className="px-10 py-7 text-lg font-semibold bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
+                  Partner With Us
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Meet the Team Section */}
       <section className="py-24 bg-slate-900">
         <div className="container mx-auto px-6">
