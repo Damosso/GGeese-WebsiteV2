@@ -212,6 +212,25 @@ export const siteData = {
     }
   ],
   
+  team: [
+    {
+      id: 1,
+      name: "Rens Vlooswijk",
+      role: "Co-Founder",
+      title: "Product Vision & Business Development",
+      description: "Creative entrepreneur, passionate about user experience and building the future of MR.",
+      image: "https://ggeese.nl/_next/image?url=%2Frens.png&w=3840&q=75"
+    },
+    {
+      id: 2,
+      name: "Ruslan Vasilev",
+      role: "Co-Founder",
+      title: "Technical Lead",
+      description: "Technical mastermind, always pushing the boundaries of immersive technology.",
+      image: "https://ggeese.nl/_next/image?url=%2Fruslan.png&w=3840&q=75"
+    }
+  ],
+  
   contactInfo: {
     email: "hello@ggeese.nl",
     phone: "+31 (0)20 123 4567",
