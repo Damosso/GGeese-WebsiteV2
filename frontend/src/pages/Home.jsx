@@ -93,7 +93,7 @@ export const Home = () => {
                   <img 
                     src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png" 
                     alt="ArcadiaX" 
-                    className="h-40 w-auto"
+                    className="h-56 w-auto"
                   />
                 </div>
                 <div className="text-left">
