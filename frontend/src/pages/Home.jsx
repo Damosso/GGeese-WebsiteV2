@@ -44,11 +44,6 @@ export const Home = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           
-          {/* Tagline at top */}
-          <p className="text-lg md:text-xl text-white/70 mb-8 font-light tracking-wide uppercase">
-            Pioneering Mixed Reality Entertainment
-          </p>
-          
           {/* GGeese Studio Logo */}
           <div className="mb-12">
             <img 
@@ -59,8 +54,12 @@ export const Home = () => {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-black mb-8 text-white leading-tight tracking-tight">
-            XR Game Studio
+            Pioneering Mixed Reality Entertainment
           </h1>
+          
+          <p className="text-xl md:text-2xl mb-6 text-white/80 max-w-4xl mx-auto font-light tracking-wide uppercase">
+            XR Game Studio
+          </p>
           
           <p className="text-2xl md:text-3xl mb-6 text-white/95 max-w-4xl mx-auto font-medium leading-relaxed">
             Creating next-generation location-based entertainment experiences
