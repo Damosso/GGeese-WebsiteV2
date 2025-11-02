@@ -96,7 +96,7 @@ export const Experience = () => {
         </div>
       </section>
 
-      {/* Interactive 3D Transformation Demo */}
+      {/* Interactive Transformation Visual */}
       <section className="py-20 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl" />
@@ -105,85 +105,54 @@ export const Experience = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-6 text-white">Interactive Transformation</h2>
+            <h2 className="text-5xl font-bold mb-6 text-white">Space Transformation</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Click the button below to see how we transform an empty space into an immersive gaming environment.
+              Watch how ArcadiaX transforms an ordinary empty warehouse into an immersive gaming environment.
             </p>
           </div>
           
-          {/* Environment Selector */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
-            {environments.map((env) => (
-              <Button
-                key={env.id}
-                onClick={() => {
-                  setSelectedEnvironment(env.id);
-                  setIsTransformed(false);
-                }}
-                variant={selectedEnvironment === env.id ? 'default' : 'outline'}
-                className={`px-6 py-3 transition-all duration-300 ${
-                  selectedEnvironment === env.id
-                    ? `bg-gradient-to-r ${env.color} text-white border-0 shadow-lg`
-                    : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:bg-slate-800'
-                }`}
-              >
-                {env.name}
-              </Button>
-            ))}
-          </div>
-          
-          {/* 3D Viewport */}
+          {/* Transformation Visual */}
           <div className="max-w-5xl mx-auto">
-            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl">
-              <div className={`absolute inset-0 transition-all duration-1000 ${
-                isTransformed ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-              }`}>
-                <div className="w-full h-full bg-slate-800 flex items-center justify-center">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl bg-slate-800">
+              {!isTransformed ? (
+                <div className="w-full h-full flex items-center justify-center p-12">
                   <div className="text-center">
                     <Box className="w-24 h-24 text-slate-600 mx-auto mb-6" />
-                    <p className="text-2xl font-semibold text-slate-400">Empty Warehouse Space</p>
-                    <p className="text-slate-500 mt-2">Basic concrete floor and walls</p>
+                    <p className="text-3xl font-semibold text-slate-400 mb-2">Empty Warehouse</p>
+                    <p className="text-slate-500 mb-8">Concrete floors, bare walls - 400m² space</p>
+                    <Badge className="bg-slate-700 text-slate-300">Before ArcadiaX</Badge>
                   </div>
                 </div>
-              </div>
-              
-              <div className={`absolute inset-0 transition-all duration-1000 ${
-                isTransformed ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-              }`}>
-                <div className={`w-full h-full bg-gradient-to-br ${
-                  environments.find(e => e.id === selectedEnvironment)?.color
-                } relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
+              ) : (
+                <div className="w-full h-full relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 animate-pulse">
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
+                  </div>
                   
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center transform-gpu animate-float">
-                      <Wand2 className="w-24 h-24 text-white mx-auto mb-6 drop-shadow-2xl" />
-                      <p className="text-3xl font-bold text-white drop-shadow-lg">
-                        {environments.find(e => e.id === selectedEnvironment)?.name}
+                  <div className="absolute inset-0 flex items-center justify-center p-12">
+                    <div className="text-center">
+                      <Wand2 className="w-24 h-24 text-white mx-auto mb-6 drop-shadow-2xl animate-pulse" />
+                      <p className="text-4xl font-bold text-white drop-shadow-lg mb-2">
+                        Mixed Reality Gaming Arena
                       </p>
-                      <p className="text-white/90 mt-2 drop-shadow-md">
-                        {environments.find(e => e.id === selectedEnvironment)?.description}
+                      <p className="text-white/90 text-lg drop-shadow-md mb-8">
+                        Virtual environments, game elements, and interactive challenges
                       </p>
+                      <div className="flex gap-3 justify-center flex-wrap">
+                        <Badge className="bg-purple-500/80 backdrop-blur-sm border-0 text-white text-sm">
+                          Paint Battle Ready
+                        </Badge>
+                        <Badge className="bg-pink-500/80 backdrop-blur-sm border-0 text-white text-sm">
+                          Ghost Hunt Active
+                        </Badge>
+                        <Badge className="bg-orange-500/80 backdrop-blur-sm border-0 text-white text-sm">
+                          Drift Mode On
+                        </Badge>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Animated particles */}
-                  <div className="absolute inset-0">
-                    {[...Array(20)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-particle"
-                        style={{
-                          left: `${Math.random() * 100}%`,
-                          top: `${Math.random() * 100}%`,
-                          animationDelay: `${Math.random() * 3}s`,
-                          animationDuration: `${3 + Math.random() * 4}s`
-                        }}
-                      />
-                    ))}
-                  </div>
                 </div>
-              </div>
+              )}
             </div>
             
             <div className="text-center mt-8">
@@ -195,13 +164,49 @@ export const Experience = () => {
                 {isTransformed ? 'Reset View' : 'Transform Space'}
                 <Wand2 className="ml-3 w-5 h-5" />
               </Button>
+              <p className="text-slate-400 mt-4">Click to see the transformation</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Detail */}
+      {/* Games Showcase */}
       <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6 text-white">The Game Library</h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              ArcadiaX features multiple party games designed for social fun. Each game transforms the same physical space in unique ways.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {siteData.games.map((game, index) => {
+              const Icon = gameIconMap[game.icon];
+              return (
+                <Card 
+                  key={game.id}
+                  className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className={`h-2 bg-gradient-to-r ${game.color}`} />
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${game.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold mb-2 text-white">{game.name}</h3>
+                        <p className="text-slate-300">{game.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
