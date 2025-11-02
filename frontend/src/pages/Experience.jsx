@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import { Layers, Box, Wand2, ArrowRight } from 'lucide-react';
+import { Layers, Box, Wand2, ArrowRight, Zap, Paintbrush, Ghost, Target, Trophy, Plus } from 'lucide-react';
+import { siteData } from '../mock';
+
+const gameIconMap = {
+  Zap,
+  Paintbrush,
+  Ghost,
+  Target,
+  Trophy,
+  Plus
+};
 
 export const Experience = () => {
   const [isTransformed, setIsTransformed] = useState(false);
