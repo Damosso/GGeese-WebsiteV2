@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Gamepad2, Users, Sparkles, Zap, ArrowRight, Play, Star } from 'lucide-react';
+import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Zap, Paintbrush, Ghost, Target, Trophy, Plus } from 'lucide-react';
 import { siteData } from '../mock';
 
 const iconMap = {
-  Gamepad2,
+  Layers,
   Users,
   Sparkles,
-  Zap
+  Maximize2
+};
+
+const gameIconMap = {
+  Zap,
+  Paintbrush,
+  Ghost,
+  Target,
+  Trophy,
+  Plus
 };
 
 export const Home = () => {
