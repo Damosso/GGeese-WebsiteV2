@@ -249,6 +249,59 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Meet the Team Section */}
+      <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 px-6 py-2 bg-purple-500/20 border-purple-500/50 text-purple-300">
+              The Team
+            </Badge>
+            <h2 className="text-5xl font-bold mb-6 text-white">Meet Our Founders</h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              The innovators behind GGeese Studio and ArcadiaX, pioneering the future of mixed reality entertainment.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {siteData.team.map((member, index) => (
+              <Card 
+                key={member.id}
+                className="group relative bg-slate-800/30 backdrop-blur-md border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <CardContent className="p-0 relative">
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
+                    <div className="mb-4">
+                      <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+                        {member.role}
+                      </Badge>
+                    </div>
+                    <p className="text-lg font-semibold text-purple-300 mb-3">{member.title}</p>
+                    <p className="text-slate-300 leading-relaxed">{member.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 cta-gradient" />
