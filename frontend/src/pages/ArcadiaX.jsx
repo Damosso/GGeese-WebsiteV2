@@ -17,8 +17,6 @@ const gameIconMap = {
 };
 
 export const ArcadiaX = () => {
-  const [isTransformed, setIsTransformed] = useState(false);
-
   const technologyFeatures = [
     {
       icon: Headphones,
