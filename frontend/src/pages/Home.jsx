@@ -165,7 +165,7 @@ export const Home = () => {
               Multiple Party Games, Endless Fun
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              ArcadiaX features a growing library of social party games designed for 4-8 players. From drift karting to ghost hunts and paint battles - there's something for everyone.
+              ArcadiaX features a growing library of social party games designed for 4-8 players. Click any game to learn more.
             </p>
           </div>
           
@@ -173,24 +173,71 @@ export const Home = () => {
             {siteData.games.map((game, index) => {
               const Icon = gameIconMap[game.icon];
               return (
-                <Card 
-                  key={game.id}
-                  className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className={`h-3 bg-gradient-to-r ${game.color}`} />
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${game.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="w-6 h-6 text-white" />
+                <Dialog key={game.id}>
+                  <DialogTrigger asChild>
+                    <Card 
+                      className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 cursor-pointer"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className={`h-3 bg-gradient-to-r ${game.color}`} />
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${game.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold mb-2 text-white group-hover:text-purple-300 transition-colors">{game.name}</h3>
+                            <p className="text-slate-300 text-sm">{game.description}</p>
+                            <p className="text-sm text-purple-400 mt-2">Click to learn more →</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </DialogTrigger>
+                  
+                  <DialogContent className="max-w-2xl bg-slate-900 border-slate-700">
+                    <DialogHeader>
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${game.color} flex items-center justify-center`}>
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        <DialogTitle className="text-3xl font-bold text-white">{game.name}</DialogTitle>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 text-white">{game.name}</h3>
-                        <p className="text-slate-300 text-sm">{game.description}</p>
+                    </DialogHeader>
+                    
+                    <div className="space-y-6 text-slate-300">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Game Overview</h4>
+                        <p className="leading-relaxed">{game.fullDescription || game.description}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Players</h4>
+                        <p>4-8 players per session</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Duration</h4>
+                        <p>10-15 minutes per round</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">What Makes It Special</h4>
+                        <ul className="list-disc list-inside space-y-2">
+                          {game.features?.map((feature, idx) => (
+                            <li key={idx}>{feature}</li>
+                          )) || (
+                            <>
+                              <li>Immersive mixed reality environment</li>
+                              <li>Real-time multiplayer competition</li>
+                              <li>Spectator-friendly gameplay</li>
+                            </>
+                          )}
+                        </ul>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </DialogContent>
+                </Dialog>
               );
             })}
           </div>
