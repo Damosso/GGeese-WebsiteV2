@@ -166,31 +166,75 @@ export const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">Join the Community</h2>
-            <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed">
-              Be part of the mixed reality revolution. Connect with venue operators, game developers, and XR enthusiasts shaping the future of entertainment.
+            <p className="text-xl md:text-2xl mb-12 text-white/95 leading-relaxed">
+              Connect with venue operators, game developers, and XR enthusiasts shaping the future of entertainment.
             </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <a 
+              href="https://www.linkedin.com/company/ggeese-studio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <Linkedin className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-bold text-white">LinkedIn</h3>
+                  <p className="text-white/80 text-sm mt-2">Professional network</p>
+                </CardContent>
+              </Card>
+            </a>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a 
-                href={siteData.contactInfo.socialMedia.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button size="lg" className="px-10 py-7 text-lg font-semibold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
-                  Follow on LinkedIn
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
-              
-              <Link to="/locations">
-                <Button size="lg" variant="outline" className="px-10 py-7 text-lg font-semibold bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                  Partner With Us
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
+            <a 
+              href="https://discord.gg/ggeese" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <MessageSquare className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-bold text-white">Discord</h3>
+                  <p className="text-white/80 text-sm mt-2">Chat & support</p>
+                </CardContent>
+              </Card>
+            </a>
+            
+            <a 
+              href="https://www.reddit.com/r/ggeesestudio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <svg className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                  <h3 className="text-xl font-bold text-white">Reddit</h3>
+                  <p className="text-white/80 text-sm mt-2">Discussions</p>
+                </CardContent>
+              </Card>
+            </a>
+            
+            <a 
+              href="https://www.instagram.com/ggeesestudio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <Instagram className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-bold text-white">Instagram</h3>
+                  <p className="text-white/80 text-sm mt-2">Behind the scenes</p>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
