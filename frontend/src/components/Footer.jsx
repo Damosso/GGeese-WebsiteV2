@@ -15,7 +15,7 @@ export const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', path: '/about' },
-      { name: 'Experience', path: '/experience' },
+      { name: 'ArcadiaX', path: '/arcadiax' },
       { name: 'Gallery', path: '/gallery' },
       { name: 'Contact', path: '/contact' }
     ],
