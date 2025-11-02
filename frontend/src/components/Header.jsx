@@ -34,8 +34,8 @@ export const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img 
               src="https://customer-assets.emergentagent.com/job_228b3afe-8d02-4e8c-8604-2bc2379db9f3/artifacts/47uq5hwj_LogoNoText.png"
-              alt="GGeese Logo"
-              className="h-12 w-12 group-hover:scale-110 transition-transform duration-300"
+              alt="GGeese Studio Logo"
+              className="h-12 w-12 transition-transform duration-300"
             />
             <span className="text-2xl font-bold text-white">GGeese Studio</span>
           </Link>
