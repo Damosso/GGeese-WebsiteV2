@@ -98,6 +98,7 @@ export const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                         placeholder="John Doe"
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-purple-500/20"
                       />
@@ -112,32 +113,8 @@ export const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                         placeholder="john@example.com"
-                        className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-purple-500/20"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone" className="text-white mb-2 block">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+31 (0)20 123 4567"
-                        className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-purple-500/20"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="company" className="text-white mb-2 block">Company / Organization</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your Company Name"
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-purple-500/20"
                       />
                     </div>
@@ -150,6 +127,7 @@ export const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                         rows={6}
                         placeholder="Tell us about your project or inquiry..."
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-purple-500/20 resize-none"
@@ -159,9 +137,10 @@ export const Contact = () => {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full py-6 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white hover:scale-105 transition-all duration-300 shadow-lg"
+                      disabled={isSubmitting}
+                      className="w-full py-6 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                       <Send className="ml-2 w-5 h-5" />
                     </Button>
                   </form>
