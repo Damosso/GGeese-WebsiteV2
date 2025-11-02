@@ -71,16 +71,16 @@ export const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-40">
-            <Link to="/arcadiax">
+            <Link to="/contact">
               <Button size="lg" className="px-16 py-8 text-xl font-bold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
-                Discover ArcadiaX
-                <ArrowRight className="ml-3 w-6 h-6" />
+                <Calendar className="mr-3 w-6 h-6" />
+                Book a Demo
               </Button>
             </Link>
             
-            <Link to="/locations">
+            <Link to="/arcadiax">
               <Button size="lg" variant="outline" className="px-16 py-8 text-xl font-bold bg-white/10 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                Partner With Us
+                Discover ArcadiaX
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
             </Link>
