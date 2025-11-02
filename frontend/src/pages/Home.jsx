@@ -69,8 +69,8 @@ export const Home = () => {
             We design and develop immersive mixed reality gaming platforms that transform venues into unforgettable social entertainment destinations.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-32">
-            <Link to="/experience">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-40">
+            <Link to="/arcadiax">
               <Button size="lg" className="px-16 py-8 text-xl font-bold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
                 Discover ArcadiaX
                 <ArrowRight className="ml-3 w-6 h-6" />
