@@ -194,39 +194,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Who Is It For Section */}
-      <section className="py-24 bg-slate-900">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-white">Who Is It For?</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              ArcadiaX transforms any space into an unforgettable XR gaming destination, perfect for various venues and events.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {siteData.useCases.map((useCase, index) => {
-              const Icon = useCaseIcons[useCase.title];
-              return (
-                <Card 
-                  key={useCase.id} 
-                  className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 group"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-10 h-10 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{useCase.title}</h3>
-                    <p className="text-slate-300">{useCase.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Meet the Team Section */}
       <section className="py-24 bg-slate-900">
         <div className="container mx-auto px-6">
