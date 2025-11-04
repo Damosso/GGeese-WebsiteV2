@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Linkedin, Instagram, MessageSquare, Calendar } from 'lucide-react';
 import { siteData } from '../mock';
 import BookDemoSection from '../components/BookDemoSection';
-import AnimatedBubbles from '../components/AnimatedBubbles';
+import DarkAccents from '../components/DarkAccents';
 
 const iconMap = {
   Layers,
@@ -29,8 +29,8 @@ export const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 hero-gradient" />
         
-        {/* Animated Bubbles Background */}
-        <AnimatedBubbles />
+        {/* Dark Accents Background */}
+        <DarkAccents />
         
         <div className={`relative z-10 container mx-auto px-6 text-center transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
