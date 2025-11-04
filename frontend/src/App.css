@@ -12,7 +12,7 @@
 .gallery-gradient,
 .experience-gradient,
 .contact-gradient {
-    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
 
 .cta-gradient {
