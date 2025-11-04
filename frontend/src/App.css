@@ -212,3 +212,80 @@ body {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(123, 63, 242, 0.3);
 }
+
+/* Enhanced Button Hover Effects with Gradient */
+button:hover,
+.btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+}
+
+/* Gradient Hover Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-hover {
+    background-size: 200% 200%;
+    transition: all 0.3s ease;
+}
+
+.gradient-hover:hover {
+    animation: gradient-shift 3s ease infinite;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 60px rgba(236, 72, 153, 0.3);
+}
+
+/* Card Gradient Border on Hover */
+@keyframes border-glow {
+    0%, 100% {
+        border-color: rgba(124, 58, 237, 0.5);
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    }
+    50% {
+        border-color: rgba(236, 72, 153, 0.5);
+        box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+    }
+}
+
+/* Link Hover with Gradient */
+a.gradient-link {
+    position: relative;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+a.gradient-link:hover {
+    filter: brightness(1.2);
+}
+
+/* Smooth Scale on Hover */
+.hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.3);
+}
+
+/* Glow Effect on Hover */
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6),
+                0 0 40px rgba(236, 72, 153, 0.4),
+                0 0 60px rgba(168, 85, 247, 0.2);
+}
