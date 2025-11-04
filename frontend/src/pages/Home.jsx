@@ -213,10 +213,10 @@ export const Home = () => {
               rel="noopener noreferrer"
               className="group"
             >
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 group">
                 <CardContent className="p-8 text-center">
-                  <Linkedin className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-bold text-white">LinkedIn</h3>
+                  <Linkedin className="w-16 h-16 text-white mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
+                  <h3 className="text-xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">LinkedIn</h3>
                   <p className="text-white/80 text-sm mt-2">Professional network</p>
                 </CardContent>
               </Card>
