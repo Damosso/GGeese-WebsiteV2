@@ -63,16 +63,19 @@ export const Home = () => {
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-40">
             <Link to="/contact">
-              <Button size="lg" className="px-16 py-8 text-xl font-bold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
-                <Calendar className="mr-3 w-6 h-6" />
-                Book a Demo
+              <Button size="lg" className="relative px-16 py-8 text-xl font-bold bg-white text-purple-600 hover:scale-105 transition-all duration-300 shadow-2xl overflow-hidden group">
+                <Calendar className="mr-3 w-6 h-6 relative z-10" />
+                <span className="relative z-10">Book a Demo</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-gradient-to-r from-purple-400 to-pink-400" />
               </Button>
             </Link>
             
             <Link to="/arcadiax">
-              <Button size="lg" variant="outline" className="px-16 py-8 text-xl font-bold bg-white/10 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                Discover ArcadiaX
-                <ArrowRight className="ml-3 w-6 h-6" />
+              <Button size="lg" variant="outline" className="relative px-16 py-8 text-xl font-bold bg-white/10 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300 overflow-hidden group">
+                <span className="relative z-10">Discover ArcadiaX</span>
+                <ArrowRight className="ml-3 w-6 h-6 relative z-10" />
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
             </Link>
           </div>
