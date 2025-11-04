@@ -33,8 +33,9 @@ export const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={headerStyle}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
+      }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
