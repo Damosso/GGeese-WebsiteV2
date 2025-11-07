@@ -28,6 +28,8 @@ const DarkAccents = () => {
           />
         ))}
       </div>
+
+      {/** Removed vertical accent lines per feedback */}
     </div>
   );
 };

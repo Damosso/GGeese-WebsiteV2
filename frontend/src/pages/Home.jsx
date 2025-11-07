@@ -7,6 +7,9 @@ import { Layers, Users, Sparkles, Maximize2, ArrowRight, Play, Linkedin, Instagr
 import { siteData } from '../mock';
 import BookDemoSection from '../components/BookDemoSection';
 import DarkAccents from '../components/DarkAccents';
+import Reveal from '../components/Reveal';
+import PartnerStrip from '../components/PartnerStrip';
+import SEO from '../components/SEO';
 
 const iconMap = {
   Layers,
@@ -25,9 +28,17 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="GGeese Studio | Pioneering Mixed Reality Entertainment"
+        description="GGeese Studio creates next-generation location-based mixed reality entertainment experiences. Featuring ArcadiaX - the ultimate XR drift karting platform with multiplayer party games."
+        keywords="mixed reality gaming, VR entertainment, drift karting, location-based VR, ArcadiaX, Meta Quest 3, XR platform, entertainment venues, party games, multiplayer VR"
+      />
+      
       {/* Hero Section - GGeese Studio XR Studio */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-32">
+      <section className="relative min-h-screen flex items-start justify-center overflow-hidden pb-28 pt-20 md:pt-28">
         <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0 hero-radial" />
+        <div className="absolute inset-0 hero-aurora" />
         
         {/* Dark Accents Background */}
         <DarkAccents />
@@ -37,7 +48,7 @@ export const Home = () => {
         }`}>
           
           {/* GGeese Studio Logo */}
-          <div className="mb-12">
+          <div className="mb-10 mt-0">
             <img 
               src="https://customer-assets.emergentagent.com/job_228b3afe-8d02-4e8c-8604-2bc2379db9f3/artifacts/05ax7qxt_Logo.png" 
               alt="GGeese Studio" 
@@ -61,43 +72,30 @@ export const Home = () => {
             We design and develop immersive mixed reality gaming platforms that transform venues into unforgettable social entertainment destinations.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-40">
-            <Link to="/contact">
-              <Button size="lg" className="relative px-16 py-8 text-xl font-bold bg-white text-purple-600 hover:scale-105 transition-all duration-300 shadow-2xl overflow-hidden group">
-                <Calendar className="mr-3 w-6 h-6 relative z-10" />
-                <span className="relative z-10">Book a Demo</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-gradient-to-r from-purple-400 to-pink-400" />
-              </Button>
-            </Link>
-            
-            <Link to="/arcadiax">
-              <Button size="lg" variant="outline" className="relative px-16 py-8 text-xl font-bold bg-white/10 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300 overflow-hidden group">
-                <span className="relative z-10">Discover ArcadiaX</span>
-                <ArrowRight className="ml-3 w-6 h-6 relative z-10" />
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-            </Link>
-          </div>
+        </div>
+      </section>
 
-          {/* Featured Product Callout - More Spacing */}
-          <div className="max-w-5xl mx-auto mt-32">
-            <div className="bg-white/10 backdrop-blur-xl border-2 border-white/30 rounded-3xl p-12 shadow-2xl">
+      {/* Flagship Product Section (separate from hero) */}
+      <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <Reveal>
+            <div className="bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-3xl p-10 md:p-12 shadow-2xl">
               <div className="flex flex-col md:flex-row items-center gap-10">
                 <div className="flex-shrink-0">
                   <img 
                     src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png" 
                     alt="ArcadiaX" 
-                    className="h-56 w-auto"
+                    className="h-48 md:h-56 w-auto"
+                    loading="lazy" decoding="async"
                   />
                 </div>
                 <div className="text-left">
-                  <h3 className="text-4xl font-bold text-white mb-4">Our Flagship Product</h3>
-                  <p className="text-xl text-white/95 mb-6 leading-relaxed">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Flagship Product</h3>
+                  <p className="text-lg md:text-xl text-white/95 mb-6 leading-relaxed max-w-2xl">
                     The ultimate mixed reality drift karting platform featuring multiple party games, spectator modes, and turnkey venue solutions.
                   </p>
                   <Link to="/arcadiax">
-                    <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/20 px-8 py-3">
+                    <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/15 px-8 py-3">
                       Learn More About ArcadiaX
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -105,7 +103,7 @@ export const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -123,19 +121,21 @@ export const Home = () => {
             {siteData.platformFeatures.map((feature, index) => {
               const Icon = iconMap[feature.icon];
               return (
+                <Reveal delay={index * 100}>
                 <Card 
                   key={feature.id} 
-                  className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                  className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 flex flex-col h-full"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardContent className="p-8">
+                  <CardContent className="p-8 flex flex-col h-full">
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
-                    <p className="text-slate-300 leading-relaxed">{feature.description}</p>
+                    <p className="text-slate-300 leading-relaxed flex-grow">{feature.description}</p>
                   </CardContent>
                 </Card>
+                </Reveal>
               );
             })}
           </div>
@@ -184,15 +184,16 @@ export const Home = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <Reveal className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-white/10 p-8 flex items-center justify-center">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_228b3afe-8d02-4e8c-8604-2bc2379db9f3/artifacts/47uq5hwj_LogoNoText.png" 
                   alt="GGeese Studio Logo" 
                   className="w-full h-full object-contain"
+                  loading="lazy" decoding="async"
                 />
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -299,6 +300,7 @@ export const Home = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
+                      loading="lazy" decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
@@ -319,6 +321,9 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Partner/Technology Strip */}
+      <PartnerStrip />
 
       {/* Book a Demo CTA Section */}
       <BookDemoSection />

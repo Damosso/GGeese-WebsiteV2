@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
+import ScrollProgress from './ScrollProgress';
 import { Menu, X } from 'lucide-react';
 
 export const Header = () => {
@@ -28,10 +29,14 @@ export const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-slate-950 ${
+        isScrolled ? 'border-b border-slate-800' : ''
       }`}
     >
+      {/* Scroll progress bar */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <ScrollProgress />
+      </div>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center gap-12">
           {/* Logo */}

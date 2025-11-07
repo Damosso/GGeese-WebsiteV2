@@ -8,6 +8,7 @@ import { Badge } from '../components/ui/badge';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { siteData } from '../mock';
 import { toast } from 'sonner';
+import SEO from '../components/SEO';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,12 +68,18 @@ export const Contact = () => {
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <SEO 
+        title="Contact Us | GGeese Studio - Get in Touch"
+        description="Get in touch with GGeese Studio to learn more about ArcadiaX, discuss venue partnerships, or book a demo of our mixed reality entertainment platform."
+        keywords="contact GGeese Studio, ArcadiaX inquiry, book demo, venue partnership, mixed reality entertainment contact"
+      />
+      
       {/* Header */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 contact-gradient" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Let's Create Something Amazing</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Let's Create Something Amazing</h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto">
             Ready to bring mixed reality racing to your venue? We'd love to hear from you.
           </p>
@@ -215,58 +222,7 @@ export const Contact = () => {
                 </div>
               </div>
               
-              {/* Map Placeholder */}
-              <div className="mt-12">
-                <div className="aspect-video rounded-xl overflow-hidden border border-slate-700">
-                  <div className="w-full h-full bg-slate-800 flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-16 h-16 text-slate-600 mx-auto mb-4" />
-                      <p className="text-slate-400">Map view coming soon</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-slate-900">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-white">Frequently Asked Questions</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Got questions? We've got answers.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            {[
-              {
-                q: 'What is the minimum group size?',
-                a: 'We accommodate groups from 4 to 12 players for optimal racing experience.'
-              },
-              {
-                q: 'How long is a typical session?',
-                a: 'Standard sessions are 60 minutes including briefing, practice, and competitive racing.'
-              },
-              {
-                q: 'Do you host corporate events?',
-                a: 'Absolutely! We specialize in corporate team building and private events.'
-              },
-              {
-                q: 'What equipment is provided?',
-                a: 'We provide all MR headsets, safety gear, and our custom drift karts.'
-              }
-            ].map((faq, index) => (
-              <Card key={index} className="bg-slate-800/50 backdrop-blur-sm border-slate-700">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-white mb-3">{faq.q}</h3>
-                  <p className="text-slate-300">{faq.a}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

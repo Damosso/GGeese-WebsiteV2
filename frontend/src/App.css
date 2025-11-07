@@ -15,6 +15,29 @@
     background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 30%, #2d1b4e 60%, #1a0a2e 100%);
 }
 
+/* Hero visual upgrades */
+.hero-radial {
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(60% 50% at 50% 30%, rgba(123, 63, 242, 0.25) 0%, rgba(123, 63, 242, 0.12) 35%, rgba(236, 72, 153, 0.10) 55%, rgba(10,10,26,0.0) 70%);
+    mix-blend-mode: screen;
+}
+
+.hero-aurora {
+    pointer-events: none;
+    z-index: 0;
+    background: conic-gradient(from 180deg at 50% 30%, rgba(168, 85, 247, 0.22), rgba(236, 72, 153, 0.18), rgba(96, 213, 232, 0.14), rgba(168, 85, 247, 0.22));
+    filter: blur(60px);
+    opacity: 0.85;
+    animation: aurora-shift 16s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-shift {
+    0%   { transform: translateY(-20px) translateX(-6px) scale(1); opacity: 0.7; }
+    50%  { transform: translateY(20px) translateX(6px) scale(1.07); opacity: 0.9; }
+    100% { transform: translateY(-10px) translateX(2px) scale(1.03); opacity: 0.78; }
+}
+
 .cta-gradient {
     background: linear-gradient(135deg, #6B2FB5 0%, #9B4DCA 25%, #E94B9E 75%, #FF6B9D 100%);
 }
@@ -288,4 +311,21 @@ a.gradient-link:hover {
     box-shadow: 0 0 20px rgba(124, 58, 237, 0.6),
                 0 0 40px rgba(236, 72, 153, 0.4),
                 0 0 60px rgba(168, 85, 247, 0.2);
+}
+
+/* Partner marquee keyframes */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    .hero-aurora { animation: none; opacity: 0.5; }
 }

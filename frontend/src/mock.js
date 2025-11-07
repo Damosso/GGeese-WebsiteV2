@@ -280,7 +280,7 @@ export const siteData = {
   ],
   
   contactInfo: {
-    email: "hello@ggeese.nl",
+    email: "ggeesestudio@gmail.com",
     phone: "+31 (0)20 123 4567",
     address: "Innovation District, Amsterdam, Netherlands",
     socialMedia: {

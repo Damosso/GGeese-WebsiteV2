@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { Card, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Layers, Box, Wand2, ArrowRight, Zap, Paintbrush, Ghost, Target, Trophy, Plus, Headphones, Users, Monitor, Wifi, Gauge, Shield } from 'lucide-react';
 import { siteData } from '../mock';
 import BookDemoSection from '../components/BookDemoSection';
 import DarkAccents from '../components/DarkAccents';
+import SEO from '../components/SEO';
 
 const gameIconMap = {
   Zap,
@@ -54,58 +54,67 @@ export const ArcadiaX = () => {
   const howItWorks = [
     {
       step: "01",
-      title: "Players Gear Up",
-      description: "Each player receives a Meta Quest 3 headset and gets seated in a custom drift kart equipped with integrated MR controls."
+      title: "Player Setup",
+      description:
+        "Each player receives a Meta Quest 3 headset and gets seated in a custom drift kart equipped with integrated MR controls.",
     },
     {
       step: "02",
       title: "Arena Anchoring",
-      description: "The system maps the physical arena (15x15m to 20x30m) and anchors virtual game elements precisely in the real space."
+      description:
+        "The system maps the physical arena (15x15m to 20x30m) and anchors virtual game elements precisely in the real space.",
     },
     {
       step: "03",
       title: "Game Selection",
-      description: "Operators choose from 5+ party games through the management app. Players see the game overlay in their headsets."
+      description:
+        "Operators choose from 5+ party games through the management app. Players see the game overlay in their headsets.",
     },
     {
       step: "04",
       title: "Mixed Reality Play",
-      description: "Players physically drive their karts while interacting with virtual objects, opponents, and game elements visible only in mixed reality."
+      description:
+        "Players physically drive their karts while interacting with virtual objects, opponents, and game elements visible only in mixed reality.",
     },
     {
       step: "05",
       title: "Spectator Engagement",
-      description: "Non-players watch the action on screens and can even interact through the spectator app, adding elements or controlling game features."
+      description:
+        "Non-players watch the action on screens and can even interact through the spectator app, adding elements or controlling game features.",
     },
     {
       step: "06",
       title: "Share & Replay",
-      description: "Game footage is captured and stored online for sharing, marketing, and player re-engagement."
-    }
+      description:
+        "Game footage is captured and stored online for sharing, marketing, and player re-engagement.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <SEO 
+        title="ArcadiaX | Mixed Reality Drift Karting Platform - GGeese Studio"
+        description="ArcadiaX is the ultimate mixed reality drift karting platform featuring Meta Quest 3, custom karts, and 5+ multiplayer party games. Perfect for entertainment venues, events, and gaming centers."
+        keywords="ArcadiaX, mixed reality karting, VR drift racing, Meta Quest 3 games, multiplayer VR, party games VR, location-based entertainment, venue gaming platform"
+      />
+      
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 hero-gradient" />
-        
+
         {/* Dark Accents Background */}
         <DarkAccents />
-        
+
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="mb-8">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png" 
-              alt="ArcadiaX" 
-              className="h-56 md:h-72 mx-auto drop-shadow-2xl"
+            <img
+              src="https://customer-assets.emergentagent.com/job_ggeese-nextgen/artifacts/789fh31c_ArcadiaX-Logo.png"
+              alt="ArcadiaX"
+              className="h-48 md:h-64 mx-auto drop-shadow-2xl"
             />
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Mixed Reality Drift Karting</h1>
-          <p className="text-2xl md:text-3xl text-white/95 max-w-5xl mx-auto mb-6 font-medium">
-            Where Physical Thrills Meet Virtual Worlds
-          </p>
-          <p className="text-xl md:text-2xl text-white/85 max-w-4xl mx-auto leading-relaxed">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Mixed Reality Drift Karting</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             ArcadiaX merges the excitement of drift karting with immersive mixed reality gaming, creating unforgettable social entertainment experiences.
           </p>
         </div>
@@ -274,6 +283,141 @@ export const ArcadiaX = () => {
                 </Dialog>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Gallery */}
+      <section className="py-24 bg-slate-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6 text-white">See ArcadiaX in Action</h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Watch gameplay footage and behind-the-scenes content from our mixed reality gaming platform.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {siteData.videos.map((video) => (
+              <Card 
+                key={video.id}
+                className="bg-slate-800/50 backdrop-blur-sm border-slate-700 overflow-hidden hover:border-purple-500/50 transition-all duration-500 group"
+              >
+                <div className="relative aspect-video bg-slate-800 overflow-hidden">
+                  <img 
+                    src={video.thumbnail} 
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {video.placeholder && (
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-3">
+                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1"></div>
+                        </div>
+                        <p className="text-white text-sm">Video Coming Soon</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-white">{video.title}</h3>
+                  <p className="text-slate-300">{video.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-slate-400 mb-4">More videos coming soon! Upload your own gameplay to share.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-slate-900">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl font-bold mb-6 text-white">Frequently Asked Questions</h2>
+              <p className="text-xl text-slate-300">
+                Everything you need to know about ArcadiaX
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  What is ArcadiaX and how does it work?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  ArcadiaX is a mixed reality gaming platform that combines physical drift karts with virtual game elements. Players wear Meta Quest 3 headsets while driving real karts in a physical arena, seeing virtual obstacles, power-ups, and game elements overlaid on their actual surroundings. It's not fully immersive VR - players can still see the real world, making it safer and more social.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  How many players can play at once?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  ArcadiaX supports 4-6 players per session, depending on your arena size. This creates the perfect balance for competitive multiplayer gaming while ensuring everyone has enough space to drift and compete effectively.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  What space requirements do I need?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  The minimum space required is 15x15 meters (about 225 square meters) for 4 players. For the optimal experience with 6 players, we recommend 20x30 meters (600 square meters). The system is flexible and can be adapted to various venue configurations.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  What games are included?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  ArcadiaX currently includes 5+ party games: MR Drift Karting, Paint Battle, Ghost Hunt, Whack-a-Mole, and Holy Cows. We regularly add new games and update existing ones based on player feedback and seasonal themes. All games are included with the platform.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  Is it safe? What about motion sickness?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  Safety is our top priority. Because ArcadiaX uses mixed reality (not full VR), players can see the real arena and their surroundings, significantly reducing motion sickness. The karts include safety features like emergency stop systems, speed controls, and protective bumpers. We also provide comprehensive safety briefings before each session.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  What's included in the turnkey solution?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  Our turnkey solution includes: Meta Quest 3 headsets, custom drift karts with integrated controls, operator management tablet/PC app, spectator viewing app, complete infrastructure (server, Wi-Fi, licenses), installation and setup, staff training, ongoing support, and regular content updates. Everything you need to start operating immediately.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  Can spectators watch the games?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  Yes! ArcadiaX includes a spectator app that lets non-players watch the mixed reality action on screens. They can see what players see in their headsets and even interact with gameplay by controlling certain game elements like obstacles or ghosts - making it a truly social experience.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="bg-slate-800/50 border-slate-700 rounded-lg px-6 hover:bg-slate-800/70 transition-colors">
+                <AccordionTrigger className="text-white text-lg font-semibold hover:no-underline">
+                  How long does a typical session last?
+                </AccordionTrigger>
+                <AccordionContent className="text-slate-300 text-base leading-relaxed">
+                  Each game lasts 10-15 minutes, making sessions perfect for quick entertainment or extended play. Most venues offer 30-60 minute sessions that include equipment setup, safety briefing, practice round, and 2-3 competitive games. This format maximizes throughput while ensuring great experiences.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>

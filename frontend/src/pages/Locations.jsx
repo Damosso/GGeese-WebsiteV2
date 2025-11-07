@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Check, ArrowRight, Building2, TrendingUp, Users, Zap, DollarSign, BarChart3, Headphones, Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export const Locations = () => {
   const benefits = [
@@ -69,17 +70,23 @@ export const Locations = () => {
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <SEO 
+        title="Venue Partnerships | ArcadiaX Location-Based Entertainment"
+        description="Partner with GGeese Studio to bring ArcadiaX to your venue. Turnkey mixed reality gaming solution with proven ROI for entertainment centers, malls, and activity venues."
+        keywords="venue partnership, location-based entertainment, VR arcade franchise, entertainment center equipment, ArcadiaX partnership, mixed reality business"
+      />
+      
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 hero-gradient" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Partner With ArcadiaX</h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Partner With ArcadiaX</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-10">
             Bring the future of entertainment to your venue. ArcadiaX offers a complete mixed reality gaming solution with proven ROI and ongoing support.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="px-12 py-7 text-lg font-semibold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
+            <Button size="lg" className="px-12 py-6 text-lg font-semibold bg-white text-purple-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl">
               Request Partnership Info
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

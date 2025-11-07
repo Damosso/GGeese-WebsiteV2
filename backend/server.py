@@ -15,10 +15,17 @@ from emails import send_contact_form_email, EmailDeliveryError
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# MongoDB connection (optional - only needed for status checks)
+try:
+    mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
+    client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=5000)
+    db = client[os.environ.get('DB_NAME', 'ggeese_website')]
+    mongodb_available = True
+except Exception as e:
+    logging.warning(f"MongoDB connection failed: {e}. Status check endpoints will be disabled.")
+    mongodb_available = False
+    client = None
+    db = None
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -55,6 +62,9 @@ async def root():
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
+    if not mongodb_available:
+        raise HTTPException(status_code=503, detail="Database service unavailable")
+    
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
     
@@ -67,6 +77,9 @@ async def create_status_check(input: StatusCheckCreate):
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
+    if not mongodb_available:
+        raise HTTPException(status_code=503, detail="Database service unavailable")
+    
     # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
     
@@ -122,4 +135,5 @@ logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
-    client.close()
+    if client:
+        client.close()

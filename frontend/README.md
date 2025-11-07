@@ -68,3 +68,47 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Quick start (Windows)
+
+These steps get you a local development server with live reload so you can see edits immediately.
+
+1. Open PowerShell or Command Prompt and change to the frontend folder:
+
+```powershell
+cd "c:\GGeese Studio\GGeese Website V3\GGeese-WebsiteV2\frontend"
+```
+
+2. Install dependencies:
+
+```powershell
+# If you have Yarn installed (recommended)
+yarn install
+
+# Or with npm
+npm install
+```
+
+3. Start the dev server (live reload):
+
+```powershell
+# Yarn
+yarn start
+
+# Alias
+yarn dev
+
+# Or with npm
+npm run start
+```
+
+Notes
+- Recommended Node version: 18.x or 20.x. Use nvm or nvm-windows to switch versions.
+- If PowerShell complains about script execution, run commands in Command Prompt (cmd.exe) or Git Bash instead.
+- If you see build errors after upgrading packages, remove `node_modules` and reinstall:
+
+```powershell
+rm -r node_modules; yarn install
+```
+
+If you'd like, I can add a small `.nvmrc`, a `frontend/.editorconfig`, and optionally add Prettier/ESLint configs and scripts to the repo. Tell me which you'd prefer and I'll add them.

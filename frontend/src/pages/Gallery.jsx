@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTrigger } from '../components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Play, X, Image as ImageIcon } from 'lucide-react';
 import { siteData } from '../mock';
+import SEO from '../components/SEO';
 
 export const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -19,12 +20,18 @@ export const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <SEO 
+        title="Gallery | GGeese Studio - ArcadiaX in Action"
+        description="Watch gameplay videos and see photos of ArcadiaX mixed reality drift karting in action. Experience the future of location-based entertainment."
+        keywords="ArcadiaX gallery, mixed reality videos, VR karting photos, gameplay footage, behind the scenes"
+      />
+      
       {/* Header */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 gallery-gradient" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 text-white">Experience In Action</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Experience In Action</h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto">
             See our mixed reality drift racing in action through gameplay videos and behind-the-scenes moments.
           </p>

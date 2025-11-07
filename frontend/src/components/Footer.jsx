@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { siteData } from '../mock';
+import Newsletter from './Newsletter';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,6 +30,11 @@ export const Footer = () => {
   return (
     <footer className="bg-slate-950 border-t border-slate-800">
       <div className="container mx-auto px-6 py-16">
+        {/* Newsletter Section */}
+        <div className="mb-16">
+          <Newsletter />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
