@@ -27,7 +27,7 @@ export const PartnerStrip = () => {
                 href={p.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-400 hover:text-white transition-colors text-lg font-semibold tracking-widest whitespace-nowrap"
+                className="text-slate-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 text-lg font-semibold tracking-widest whitespace-nowrap"
               >
                 {p.short}
               </a>

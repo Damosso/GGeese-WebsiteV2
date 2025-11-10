@@ -25,14 +25,14 @@ export const NotFound = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/">
-              <Button size="lg" className="px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+              <Button size="lg" className="px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 shadow-lg">
                 <Home className="mr-2 w-5 h-5" />
                 Back to Home
               </Button>
             </Link>
             
             <Link to="/arcadiax">
-              <Button size="lg" variant="outline" className="px-8 py-6 bg-slate-800 border-slate-700 text-white hover:bg-slate-700 hover:scale-105 transition-all duration-300">
+              <Button size="lg" variant="outline" className="px-8 py-6 bg-slate-800 border-slate-700 text-white hover:bg-slate-700 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
                 <Search className="mr-2 w-5 h-5" />
                 Explore ArcadiaX
               </Button>
@@ -42,15 +42,15 @@ export const NotFound = () => {
           <div className="mt-12">
             <p className="text-slate-400 mb-4">Looking for something specific?</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/contact" className="text-purple-400 hover:text-purple-300 transition-colors">
+              <Link to="/contact" className="text-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30">
                 Contact Us
               </Link>
               <span className="text-slate-600">•</span>
-              <Link to="/locations" className="text-purple-400 hover:text-purple-300 transition-colors">
+              <Link to="/locations" className="text-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30">
                 Locations
               </Link>
               <span className="text-slate-600">•</span>
-              <Link to="/gallery" className="text-purple-400 hover:text-purple-300 transition-colors">
+              <Link to="/gallery" className="text-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30">
                 Gallery
               </Link>
             </div>

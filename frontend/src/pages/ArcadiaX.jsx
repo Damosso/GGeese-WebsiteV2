@@ -232,7 +232,7 @@ export const ArcadiaX = () => {
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-purple-300 transition-colors">{game.name}</h3>
+                            <h3 className="text-2xl font-bold mb-2 text-white">{game.name}</h3>
                             <p className="text-slate-300">{game.description}</p>
                             <p className="text-sm text-purple-400 mt-2">Click to learn more →</p>
                           </div>

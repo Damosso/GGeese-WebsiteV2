@@ -159,35 +159,35 @@ export const Contact = () => {
               <h2 className="text-4xl font-bold mb-8 text-white">Contact Information</h2>
               
               <div className="space-y-6 mb-12">
-                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500">
+                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 transition-all duration-500">
                   <CardContent className="p-6 flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
-                      <a href={`mailto:${siteData.contactInfo.email}`} className="text-slate-300 hover:text-purple-400 transition-colors">
+                      <a href={`mailto:${siteData.contactInfo.email}`} className="text-slate-300 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
                         {siteData.contactInfo.email}
                       </a>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500">
+                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 transition-all duration-500">
                   <CardContent className="p-6 flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
-                      <a href={`tel:${siteData.contactInfo.phone}`} className="text-slate-300 hover:text-purple-400 transition-colors">
+                      <a href={`tel:${siteData.contactInfo.phone}`} className="text-slate-300 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
                         {siteData.contactInfo.phone}
                       </a>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-purple-500/50 transition-all duration-500">
+                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700 transition-all duration-500">
                   <CardContent className="p-6 flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />

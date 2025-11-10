@@ -41,7 +41,7 @@ export const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center gap-12">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
             <img 
               src={assets.headerLogo}
               alt="GGeese Studio"
@@ -49,7 +49,7 @@ export const Header = () => {
               loading="eager" fetchPriority="high"
               onError={(e) => { e.currentTarget.src = '/images/placeholder-logo.svg'; }}
             />
-            <span className="text-2xl font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent">
+            <span className="text-2xl font-bold text-white">
               GGeese Studio
             </span>
           </Link>
@@ -80,12 +80,10 @@ export const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block ml-auto">
             <Link to="/contact">
-              <Button className="relative px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold overflow-hidden group">
+              <Button className="relative px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold overflow-hidden group transition-transform duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 <span className="relative z-10">Book a Demo</span>
                 {/* Animated gradient overlay on hover */}
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {/* Glow effect */}
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md bg-gradient-to-r from-purple-400 to-pink-400" />
               </Button>
             </Link>
           </div>

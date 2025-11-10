@@ -36,7 +36,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
+            <Link to="/" className="flex items-center gap-3 mb-6 group transition-transform duration-300 hover:scale-105 will-change-transform">
               <img 
                 src={assets.footerLogo}
                 alt="GGeese Logo"
@@ -52,11 +52,11 @@ export const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <a href={`mailto:${siteData.contactInfo.email}`} className="flex items-center gap-3 text-slate-400 hover:text-purple-400 transition-colors group">
+              <a href={`mailto:${siteData.contactInfo.email}`} className="flex items-center gap-3 text-slate-400 transition-transform duration-300 hover:scale-105 will-change-transform group">
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{siteData.contactInfo.email}</span>
               </a>
-              <a href={`tel:${siteData.contactInfo.phone}`} className="flex items-center gap-3 text-slate-400 hover:text-purple-400 transition-colors group">
+              <a href={`tel:${siteData.contactInfo.phone}`} className="flex items-center gap-3 text-slate-400 transition-transform duration-300 hover:scale-105 will-change-transform group">
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{siteData.contactInfo.phone}</span>
               </a>
@@ -76,7 +76,7 @@ export const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center hover:border-purple-500 hover:bg-slate-800 hover:scale-110 transition-all duration-300"
+                    className="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700 flex items-center justify-center hover:border-purple-500 hover:bg-slate-800 hover:scale-110 transition-all duration-300 will-change-transform"
                     aria-label={social.label}
                   >
                     <Icon className="w-5 h-5 text-slate-400" />
@@ -94,7 +94,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-slate-400 hover:text-purple-400 transition-colors"
+                    className="text-slate-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
                   >
                     {link.name}
                   </Link>
@@ -111,7 +111,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-slate-400 hover:text-purple-400 transition-colors"
+                    className="text-slate-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
                   >
                     {link.name}
                   </Link>
