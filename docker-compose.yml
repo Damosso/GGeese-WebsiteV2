@@ -2,7 +2,7 @@ services:
   web:
     image: ghcr.io/damosso/GGeese-WebsiteV2
     ports:
-      - "8080:3000"
+      - "8043:3000"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:3000/"]
